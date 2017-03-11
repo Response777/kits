@@ -1,0 +1,7 @@
+Dataloader:
+  data_dir: ../../dataset/SemEval2010/
+
+Vectorizer:
+  word2vec_path: ../../word2vec/GoogleNews-vectors-negative300.bin
+  # word2vec_path: ../../word2vec/wikipedia200.bin
+  padded_length: 100
