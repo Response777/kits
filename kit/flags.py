@@ -44,7 +44,16 @@ def _define(flagtype):
                                     type = flagtype)
     return wrapper
 
+# fix boolean, ref: https://stackoverflow.com/questions/15008758/parsing-boolean-values-with-argparse
+def str2bool(s):
+    if s.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif s.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError("Boolean value expected")
+
 DEFINE_string  = _define(str)
 DEFINE_integer = _define(int)
 DEFINE_float   = _define(float)
-DEFINE_bool    = _define(bool)
+DEFINE_bool    = _define(str2bool)
