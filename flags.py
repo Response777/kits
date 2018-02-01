@@ -42,6 +42,7 @@ def _define(flagtype):
                                     default = default_value,
                                     help = doc_string,
                                     type = flagtype)
+        FLAGS.__dict__['_parsed'] = False
     return wrapper
 
 # fix boolean, ref: https://stackoverflow.com/questions/15008758/parsing-boolean-values-with-argparse
